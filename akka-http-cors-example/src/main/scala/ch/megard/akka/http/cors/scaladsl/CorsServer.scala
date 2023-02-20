@@ -1,7 +1,7 @@
 package ch.megard.akka.http.cors.scaladsl
 
-import akka.http.scaladsl.model.StatusCodes
-import akka.http.scaladsl.server._
+import org.apache.pekko.http.scaladsl.model.StatusCodes
+import org.apache.pekko.http.scaladsl.server._
 
 /** Example of a Scala HTTP server using the CORS directive.
   */

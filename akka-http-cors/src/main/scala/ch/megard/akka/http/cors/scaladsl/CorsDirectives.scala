@@ -1,10 +1,10 @@
 package ch.megard.akka.http.cors.scaladsl
 
-import akka.http.scaladsl.model.HttpMethods._
-import akka.http.scaladsl.model.headers._
-import akka.http.scaladsl.model.{HttpMethod, HttpResponse, StatusCodes}
-import akka.http.scaladsl.server._
-import akka.http.scaladsl.server.directives._
+import org.apache.pekko.http.scaladsl.model.HttpMethods._
+import org.apache.pekko.http.scaladsl.model.headers._
+import org.apache.pekko.http.scaladsl.model.{HttpMethod, HttpResponse, StatusCodes}
+import org.apache.pekko.http.scaladsl.server._
+import org.apache.pekko.http.scaladsl.server.directives._
 import ch.megard.akka.http.cors.javadsl
 import ch.megard.akka.http.cors.scaladsl.model.HttpOriginMatcher
 import ch.megard.akka.http.cors.scaladsl.settings.CorsSettings

@@ -1,7 +1,7 @@
 package ch.megard.akka.http.cors.scaladsl.model
 
-import akka.http.javadsl.{model => jm}
-import akka.http.scaladsl.model.headers.HttpOrigin
+import org.apache.pekko.http.javadsl.{model => jm}
+import org.apache.pekko.http.scaladsl.model.headers.HttpOrigin
 import ch.megard.akka.http.cors.javadsl
 
 import scala.collection.immutable.Seq

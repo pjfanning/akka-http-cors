@@ -1,8 +1,8 @@
 package ch.megard.akka.http.cors.scaladsl
 
-import akka.http.scaladsl.model.HttpMethod
-import akka.http.scaladsl.model.headers.HttpOrigin
-import akka.http.scaladsl.server.Rejection
+import org.apache.pekko.http.scaladsl.model.HttpMethod
+import org.apache.pekko.http.scaladsl.model.headers.HttpOrigin
+import org.apache.pekko.http.scaladsl.server.Rejection
 import ch.megard.akka.http.cors.javadsl
 
 import scala.collection.JavaConverters._
@@ -30,7 +30,7 @@ object CorsRejection {
     */
   final case class InvalidOrigin(origins: Seq[HttpOrigin]) extends javadsl.CorsRejection.InvalidOrigin with Cause {
     override def description: String = s"invalid origin '${if (origins.isEmpty) "null" else origins.mkString(" ")}'"
-    override def getOrigins          = (origins: Seq[akka.http.javadsl.model.headers.HttpOrigin]).asJava
+    override def getOrigins          = (origins: Seq[org.apache.pekko.http.javadsl.model.headers.HttpOrigin]).asJava
   }
 
   /** Signals the CORS request was rejected because its method was invalid.

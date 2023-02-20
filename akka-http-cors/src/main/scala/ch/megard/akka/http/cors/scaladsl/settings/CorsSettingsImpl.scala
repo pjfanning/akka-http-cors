@@ -1,7 +1,7 @@
 package ch.megard.akka.http.cors.scaladsl.settings
 
-import akka.http.scaladsl.model.{HttpHeader, HttpMethod}
-import akka.http.scaladsl.model.headers._
+import org.apache.pekko.http.scaladsl.model.{HttpHeader, HttpMethod}
+import org.apache.pekko.http.scaladsl.model.headers._
 import ch.megard.akka.http.cors.scaladsl.model.{HttpHeaderRange, HttpOriginMatcher}
 
 import scala.collection.immutable.Seq

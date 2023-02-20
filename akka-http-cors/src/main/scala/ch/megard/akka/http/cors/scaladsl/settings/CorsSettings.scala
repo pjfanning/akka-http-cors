@@ -3,10 +3,10 @@ package ch.megard.akka.http.cors.scaladsl.settings
 import java.util.Optional
 import java.util.concurrent.TimeUnit
 
-import akka.actor.ActorSystem
-import akka.annotation.DoNotInherit
-import akka.http.scaladsl.model.headers.HttpOrigin
-import akka.http.scaladsl.model.{HttpHeader, HttpMethod, HttpMethods}
+import org.apache.pekko.actor.ActorSystem
+import org.apache.pekko.annotation.DoNotInherit
+import org.apache.pekko.http.scaladsl.model.headers.HttpOrigin
+import org.apache.pekko.http.scaladsl.model.{HttpHeader, HttpMethod, HttpMethods}
 import ch.megard.akka.http.cors.javadsl
 import ch.megard.akka.http.cors.scaladsl.model.{HttpHeaderRange, HttpOriginMatcher}
 import com.typesafe.config.ConfigException.{Missing, WrongType}
@@ -111,7 +111,7 @@ abstract class CorsSettings private[akka] () extends javadsl.settings.CorsSettin
   override def getAllowCredentials         = this.allowCredentials
   override def getAllowedOrigins           = this.allowedOrigins
   override def getAllowedHeaders           = this.allowedHeaders
-  override def getAllowedMethods           = (this.allowedMethods: Seq[akka.http.javadsl.model.HttpMethod]).asJava
+  override def getAllowedMethods           = (this.allowedMethods: Seq[org.apache.pekko.http.javadsl.model.HttpMethod]).asJava
   override def getExposedHeaders           = this.exposedHeaders.asJava
   override def getMaxAge                   = OptionConverters.toJava(this.maxAge)
 
@@ -129,7 +129,7 @@ abstract class CorsSettings private[akka] () extends javadsl.settings.CorsSettin
   override def withAllowedHeaders(newValue: javadsl.model.HttpHeaderRange): CorsSettings = {
     copy(allowedHeaders = newValue.asInstanceOf[HttpHeaderRange])
   }
-  override def withAllowedMethods(newValue: java.lang.Iterable[akka.http.javadsl.model.HttpMethod]): CorsSettings = {
+  override def withAllowedMethods(newValue: java.lang.Iterable[org.apache.pekko.http.javadsl.model.HttpMethod]): CorsSettings = {
     copy(allowedMethods = newValue.asScala.toList.asInstanceOf[List[HttpMethod]])
   }
   override def withExposedHeaders(newValue: java.lang.Iterable[String]): CorsSettings = {
@@ -169,7 +169,7 @@ object CorsSettings {
   /** Creates an instance of CorsSettings using the configuration provided by the given ActorSystem.
     */
   def apply(system: ActorSystem): CorsSettings =
-    // From private akka.http.impl.util.SettingsCompanionImpl implementation
+    // From private org.apache.pekko.http.impl.util.SettingsCompanionImpl implementation
     cache.getOrElse(
       system, {
         val settings = apply(system.settings.config)

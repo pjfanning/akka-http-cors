@@ -2,9 +2,9 @@ package ch.megard.akka.http.cors.javadsl.settings
 
 import java.util.Optional
 
-import akka.actor.ActorSystem
-import akka.annotation.DoNotInherit
-import akka.http.javadsl.model.HttpMethod
+import org.apache.pekko.actor.ActorSystem
+import org.apache.pekko.annotation.DoNotInherit
+import org.apache.pekko.http.javadsl.model.HttpMethod
 import ch.megard.akka.http.cors.javadsl.model.{HttpHeaderRange, HttpOriginMatcher}
 import ch.megard.akka.http.cors.scaladsl
 import ch.megard.akka.http.cors.scaladsl.settings.CorsSettingsImpl

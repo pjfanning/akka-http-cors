@@ -1,6 +1,6 @@
 package ch.megard.akka.http.cors.javadsl.model;
 
-import akka.http.impl.util.Util;
+import org.apache.pekko.http.impl.util.Util;
 import ch.megard.akka.http.cors.scaladsl.model.HttpHeaderRange$;
 
 

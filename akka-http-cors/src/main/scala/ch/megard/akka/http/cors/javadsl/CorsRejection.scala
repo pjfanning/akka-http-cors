@@ -1,8 +1,8 @@
 package ch.megard.akka.http.cors.javadsl
 
-import akka.http.javadsl.model.HttpMethod
-import akka.http.javadsl.model.headers.HttpOrigin
-import akka.http.javadsl.server.CustomRejection
+import org.apache.pekko.http.javadsl.model.HttpMethod
+import org.apache.pekko.http.javadsl.model.headers.HttpOrigin
+import org.apache.pekko.http.javadsl.server.CustomRejection
 
 /** Rejection created by the CORS directives. Signal the CORS request was rejected. The reason of the rejection is
   * specified in the cause.

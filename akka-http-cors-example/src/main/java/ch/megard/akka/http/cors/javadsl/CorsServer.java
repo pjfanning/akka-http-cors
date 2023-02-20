@@ -1,8 +1,8 @@
 package ch.megard.akka.http.cors.javadsl;
 
 
-import akka.http.javadsl.model.StatusCodes;
-import akka.http.javadsl.server.*;
+import org.apache.pekko.http.javadsl.model.StatusCodes;
+import org.apache.pekko.http.javadsl.server.*;
 
 import java.util.NoSuchElementException;
 import java.util.concurrent.ExecutionException;

@@ -2,8 +2,8 @@ package ch.megard.akka.http.cors.javadsl
 
 import java.util.function.Supplier
 
-import akka.http.javadsl.server.{RejectionHandler, Route}
-import akka.http.javadsl.server.directives.RouteAdapter
+import org.apache.pekko.http.javadsl.server.{RejectionHandler, Route}
+import org.apache.pekko.http.javadsl.server.directives.RouteAdapter
 import ch.megard.akka.http.cors.javadsl.settings.CorsSettings
 import ch.megard.akka.http.cors.scaladsl
 

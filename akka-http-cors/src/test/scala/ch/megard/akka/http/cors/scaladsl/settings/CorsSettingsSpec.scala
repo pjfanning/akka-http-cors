@@ -1,8 +1,8 @@
 package ch.megard.akka.http.cors.scaladsl.settings
 
-import akka.http.scaladsl.model.headers.HttpOrigin
-import akka.http.scaladsl.model.{HttpMethod, HttpMethods}
-import akka.http.scaladsl.testkit.ScalatestRouteTest
+import org.apache.pekko.http.scaladsl.model.headers.HttpOrigin
+import org.apache.pekko.http.scaladsl.model.{HttpMethod, HttpMethods}
+import org.apache.pekko.http.scaladsl.testkit.ScalatestRouteTest
 import ch.megard.akka.http.cors.scaladsl.model.{HttpHeaderRange, HttpOriginMatcher}
 import com.typesafe.config.{ConfigFactory, ConfigValueFactory}
 import org.scalatest.matchers.should.Matchers

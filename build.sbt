@@ -3,6 +3,7 @@ lazy val commonSettings = Seq(
   version            := "1.1.4-SNAPSHOT",
   scalaVersion       := "2.13.8",
   crossScalaVersions := Seq(scalaVersion.value, "2.12.15", "3.1.1"),
+  resolvers += "Apache Nexus Snapshots".at("https://repository.apache.org/content/repositories/snapshots/"),
   scalacOptions ++= Seq(
     "-encoding",
     "UTF-8",
@@ -46,8 +47,8 @@ lazy val root = (project in file("."))
   .settings(commonSettings)
   .settings(dontPublishSettings)
 
-lazy val akkaVersion     = "2.6.18"
-lazy val akkaHttpVersion = "10.2.7"
+lazy val pekkoVersion     = "0.0.0+26592-864ee821-SNAPSHOT"
+lazy val pekkoHttpVersion = "0.0.0+4284-374ff95e-SNAPSHOT"
 
 lazy val `akka-http-cors` = project
   .settings(commonSettings)
@@ -57,10 +58,10 @@ lazy val `akka-http-cors` = project
     Compile / packageBin / packageOptions += Package.ManifestAttributes(
       "Automatic-Module-Name" -> "ch.megard.akka.http.cors"
     ),
-    libraryDependencies += "com.typesafe.akka" %% "akka-http"   % akkaHttpVersion cross CrossVersion.for3Use2_13,
-    libraryDependencies += "com.typesafe.akka" %% "akka-stream" % akkaVersion % Provided cross CrossVersion.for3Use2_13,
-    libraryDependencies += "com.typesafe.akka" %% "akka-http-testkit" % akkaHttpVersion % Test cross CrossVersion.for3Use2_13,
-    libraryDependencies += "com.typesafe.akka" %% "akka-stream-testkit" % akkaVersion % Test cross CrossVersion.for3Use2_13,
+    libraryDependencies += "org.apache.pekko" %% "pekko-http"   % pekkoHttpVersion cross CrossVersion.for3Use2_13,
+    libraryDependencies += "org.apache.pekko" %% "pekko-stream" % pekkoVersion % Provided cross CrossVersion.for3Use2_13,
+    libraryDependencies += "org.apache.pekko" %% "pekko-http-testkit" % pekkoHttpVersion % Test cross CrossVersion.for3Use2_13,
+    libraryDependencies += "org.apache.pekko" %% "pekko-stream-testkit" % pekkoVersion % Test cross CrossVersion.for3Use2_13,
     libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.11" % Test
   )
 
@@ -69,7 +70,7 @@ lazy val `akka-http-cors-example` = project
   .settings(commonSettings)
   .settings(dontPublishSettings)
   .settings(
-    libraryDependencies += "com.typesafe.akka" %% "akka-stream" % akkaVersion cross CrossVersion.for3Use2_13
+    libraryDependencies += "org.apache.pekko" %% "pekko-stream" % pekkoVersion cross CrossVersion.for3Use2_13
     // libraryDependencies += "ch.megard" %% "akka-http-cors" % version.value
   )
 
@@ -79,5 +80,5 @@ lazy val `akka-http-cors-bench-jmh` = project
   .settings(commonSettings)
   .settings(dontPublishSettings)
   .settings(
-    libraryDependencies += "com.typesafe.akka" %% "akka-stream" % akkaVersion cross CrossVersion.for3Use2_13
+    libraryDependencies += "org.apache.pekko" %% "pekko-stream" % pekkoVersion cross CrossVersion.for3Use2_13
   )

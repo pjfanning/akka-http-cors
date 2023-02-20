@@ -1,6 +1,6 @@
 package ch.megard.akka.http.cors.scaladsl.model
 
-import akka.http.scaladsl.model.headers.HttpOrigin
+import org.apache.pekko.http.scaladsl.model.headers.HttpOrigin
 import org.scalatest.Inspectors
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
